@@ -1,19 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
+    public static Transform[] CPs;
 
-    
-
-    private void Start()
+    void Awake()
     {
-        Transform[]  CP = GetComponentsInChildren<Transform>();
+        CPs = new Transform[transform.childCount];
+        for (int i = 0; i < CPs.Length; i++)
+        {
+            CPs[i] = transform.GetChild(i);
+        }
 
-        var test = 1;
+
+
     }
 
-   
 
 }

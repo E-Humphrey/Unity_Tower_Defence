@@ -333,6 +333,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6795090634747912043}
+  - component: {fileID: -54295208899941615}
   m_Layer: 0
   m_Name: NormalEnemy
   m_TagString: Untagged
@@ -360,6 +361,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &-54295208899941615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6126815527048037841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6109e74738efd9c4b9398e4d2ee097c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
+  FastWalkSpeed: 12
+  NormalWalkSpeed: 5
+  Nextpos: {fileID: 0}
+  cpindex: 0
 --- !u!1 &7304109603115212907
 GameObject:
   m_ObjectHideFlags: 0
