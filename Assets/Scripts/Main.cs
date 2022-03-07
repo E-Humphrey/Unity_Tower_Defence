@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Stats : MonoBehaviour
+public class Main : MonoBehaviour
 {
-    public int MainHealth = 10;
+    public static int MainHealth = 25;
+
 
 }

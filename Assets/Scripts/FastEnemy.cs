@@ -6,7 +6,7 @@ public class FastEnemy : MonoBehaviour
 {
     public int Health;
 
-
+    public int Take_Lives = 1;
 
     public float FastWalkSpeed = 15f;
 
@@ -36,6 +36,8 @@ public class FastEnemy : MonoBehaviour
 
         if (cpindex >= CheckPoint.CPs.Length - 1)
         {
+            Main.MainHealth -= Take_Lives;
+
             Destroy(gameObject);
             return;
         }

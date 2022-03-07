@@ -6,6 +6,8 @@ public class WeakEnemy : MonoBehaviour
 {
     public int Health;
 
+    public int Take_Lives = 1;
+
 
 
     public float WeakWalkSpeed = 5f;
@@ -36,6 +38,8 @@ public class WeakEnemy : MonoBehaviour
 
         if (cpindex >= CheckPoint.CPs.Length - 1)
         {
+            Main.MainHealth -= Take_Lives;
+
             Destroy(gameObject);
             return;
         }

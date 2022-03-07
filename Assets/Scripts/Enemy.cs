@@ -4,6 +4,7 @@ public class Enemy : MonoBehaviour
 {
     public int Health;
 
+    public int Take_Lives = 1;
 
     public float NormalWalkSpeed = 10f;
 
@@ -33,6 +34,8 @@ public class Enemy : MonoBehaviour
 
         if (cpindex >= CheckPoint.CPs.Length - 1)
         {
+            Main.MainHealth -= Take_Lives;
+
             Destroy(gameObject);
             return;
         }
