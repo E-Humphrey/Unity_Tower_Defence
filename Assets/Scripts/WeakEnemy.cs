@@ -10,7 +10,7 @@ public class WeakEnemy : MonoBehaviour
 
 
 
-    public float WeakWalkSpeed = 5f;
+    public static float WeakWalkSpeed = 5f;
 
     public Transform Nextpos;
     public int cpindex;

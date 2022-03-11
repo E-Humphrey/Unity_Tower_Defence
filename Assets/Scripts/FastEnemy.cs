@@ -8,7 +8,7 @@ public class FastEnemy : MonoBehaviour
 
     public int Take_Lives = 1;
 
-    public float FastWalkSpeed = 15f;
+    public static float FastWalkSpeed = 15f;
 
     public Transform Nextpos;
     public int cpindex;

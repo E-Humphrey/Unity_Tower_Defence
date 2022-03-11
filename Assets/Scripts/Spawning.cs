@@ -15,7 +15,8 @@ public class Spawning : MonoBehaviour
     public Text WaveText;
     public Text LivesText;
 
-    
+    public GameObject DeadUI;
+    public GameObject AliveUI;
 
     public int WaveNum = 0;
 
@@ -31,26 +32,34 @@ public class Spawning : MonoBehaviour
 
     void Update()
     {
-        if (CountDown <= 0)
-        {
-            if (WaveNum < 3)
-            {
-                StartCoroutine(W_WaveSpawn());
-            }
-            else if (WaveNum < 6)
-            {
-                StartCoroutine(N_WaveSpawn());
-            }
-            else if (WaveNum < 9)
-            {
-                StartCoroutine(F_WaveSpawn());
-            }
-            else
-            {
-                StartCoroutine(A_WaveSpawn());
-            }
 
-            CountDown = Timer;
+        if (Main.MainHealth <= 0)
+        {
+            GameOver();
+        }
+        else           
+        {
+            if (CountDown <= 0)
+            {
+                if (WaveNum < 3)
+                {
+                    StartCoroutine(W_WaveSpawn());
+                }
+                else if (WaveNum < 6)
+                {
+                    StartCoroutine(N_WaveSpawn());
+                }
+                else if (WaveNum < 9)
+                {
+                    StartCoroutine(F_WaveSpawn());
+                }
+                else
+                {
+                    StartCoroutine(A_WaveSpawn());
+                }
+
+                CountDown = Timer;
+            }
         }
 
         CountDown -= Time.deltaTime;
@@ -146,6 +155,17 @@ public class Spawning : MonoBehaviour
         Instantiate(FenemyPrefab, StartPos.position, StartPos.rotation);
         yield return new WaitForSeconds(A_WaitBetweenSpawns);
 
+    }
+
+    void GameOver()
+    {
+
+        FastEnemy.FastWalkSpeed = 0f;
+        WeakEnemy.WeakWalkSpeed = 0f;
+        Enemy.NormalWalkSpeed = 0f;
+        DeadUI.SetActive(true);
+        AliveUI.SetActive(false);
+        CountDown = 9999999999999999f;
     }
 
 }

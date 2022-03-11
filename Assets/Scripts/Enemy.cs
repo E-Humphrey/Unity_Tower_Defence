@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 
     public int Take_Lives = 1;
 
-    public float NormalWalkSpeed = 10f;
+    public static float NormalWalkSpeed = 10f;
 
     public Transform Nextpos;
     public int cpindex;
