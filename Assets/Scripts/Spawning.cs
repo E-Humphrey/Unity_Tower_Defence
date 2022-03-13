@@ -14,6 +14,7 @@ public class Spawning : MonoBehaviour
     public Text CountDownText;
     public Text WaveText;
     public Text LivesText;
+    public Text CashText;
 
     public GameObject DeadUI;
     public GameObject AliveUI;
@@ -37,7 +38,7 @@ public class Spawning : MonoBehaviour
         {
             GameOver();
         }
-        else           
+        else
         {
             if (CountDown <= 0)
             {
@@ -64,11 +65,13 @@ public class Spawning : MonoBehaviour
 
         CountDown -= Time.deltaTime;
 
-        CountDownText.text = ("Until Next Round:" +Mathf.Round(CountDown).ToString());
+        CountDownText.text = ("Until Next Round:" + Mathf.Round(CountDown).ToString());
 
         WaveText.text = ("Wave: " + WaveNum);
 
-        LivesText.text = ("Lives: " +(Main.MainHealth.ToString()));
+        LivesText.text = ("Lives: " + (Main.MainHealth.ToString()));
+
+        CashText.text = ("Cash: " + (Main.MainCash.ToString()));
     }
 
     IEnumerator W_WaveSpawn()
